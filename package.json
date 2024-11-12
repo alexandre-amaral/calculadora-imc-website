@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export",
+    "generate": "next build && mkdir -p out && cp -r .next/static out/static && touch out/.nojekyll",
+    "deploy": "npm run generate && git add -f out && git commit -m 'deploy' && git push origin gh-pages"
   },
   "dependencies": {
     "react": "19.0.0-rc-66855b96-20241106",
